@@ -1,0 +1,116 @@
+
+@RestaurantManagmentAPI_HostAddress = http://localhost:5029
+
+### CATEGORIES
+
+### 1. Get all categories
+GET {{RestaurantManagmentAPI_HostAddress}}/api/categories
+Accept: application/json
+
+###
+
+### 2. Create category
+POST {{RestaurantManagmentAPI_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Pizza"
+}
+
+###
+
+### 3. Get category by ID
+GET {{RestaurantManagmentAPI_HostAddress}}/api/categories/1
+Accept: application/json
+
+###
+
+### 4. Update category
+PUT {{RestaurantManagmentAPI_HostAddress}}/api/categories/1
+Content-Type: application/json
+
+{
+  "name": "Burgers"
+}
+
+### PRODUCTS
+
+### 5. Create product
+POST {{RestaurantManagmentAPI_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Margherita Pizza",
+  "price": 12.50,
+  "categoryId": 1,
+  "isAvailable": true
+}
+
+###
+
+### 6. Get all products
+GET {{RestaurantManagmentAPI_HostAddress}}/api/products
+Accept: application/json
+
+###
+
+### 7. Get product by ID
+GET {{RestaurantManagmentAPI_HostAddress}}/api/products/1
+Accept: application/json
+
+###
+
+### 8. Update product
+PUT {{RestaurantManagmentAPI_HostAddress}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Large Margherita Pizza",
+  "price": 15.00,
+  "categoryId": 1,
+  "isAvailable": true
+}
+
+###
+
+### 9. Delete product
+DELETE {{RestaurantManagmentAPI_HostAddress}}/api/products/1
+
+### ORDERS
+
+### 10. Create order
+POST {{RestaurantManagmentAPI_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "customerName": "Ruslan"
+}
+
+###
+
+### 11. Get all orders
+GET {{RestaurantManagmentAPI_HostAddress}}/api/orders
+Accept: application/json
+
+###
+
+### 12. Get order by ID
+GET {{RestaurantManagmentAPI_HostAddress}}/api/orders/1
+Accept: application/json
+
+### ORDER ITEMS
+
+### 13. Add product to order
+POST {{RestaurantManagmentAPI_HostAddress}}/api/orderitems
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": 1,
+  "quantity": 2
+}
+
+###
+
+### 14. Remove product from order
+DELETE {{RestaurantManagmentAPI_HostAddress}}/api/orderitems/1/1
